@@ -1,0 +1,1 @@
+select AVG(energy) as Average_energy_by_drake from songs where artist_id = (select id from artists where name == "Drake")

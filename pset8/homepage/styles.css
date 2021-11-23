@@ -1,0 +1,30 @@
+.test{
+    color:red;
+}
+h1{
+    color:red;
+    text-align:center;
+}
+.new-button{
+    background-color:purple;
+    display:block;
+    width:200px;
+    height:40px;
+    text-align:center;
+    margin:auto;
+    
+}
+.new-button:hover{
+    background-color:yellow;
+}
+.pash:hover{
+    color:green;
+}
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: lightblue;
+  }
+ h1{
+    font-size:1em;
+  }
+}

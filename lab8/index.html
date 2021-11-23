@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+        function checkAnswer() {
+            console.log("chechkAnswer works")
+            let text = document.querySelector("#mywrong")
+            text.style.color = "red"
+            let type = text.value
+            let pasha = document.querySelector(".cony")
+            let incorrect = document.querySelector(".incorrect")
+            if(type==="Switzerland"){
+                incorrect.style.display = "none"
+                text.style.color = "green"
+                pasha.style.display = "inline"
+                return
+            } else {
+                pasha.style.display = "none"
+                incorrect.style.display = "inline"
+            }
+        }
+        function c() {
+            let button = document.getElementById('correct')
+            button.style.backgroundColor = "green"
+            let text = document.querySelector(".javascript")
+            text.style.display = "inline"
+        }
+        function incorrect(id) {
+            let incorrect = document.querySelector(id)
+            incorrect.style.backgroundColor = "red"
+            let text = document.querySelector(".mylife")
+            text.style.display ="block"
+        } 
+        function reset() {
+            let reset = document.querySelectorAll(".reset")
+            reset.forEach(function (element) {
+                element.style.backgroundColor = "#d9edff"
+            })
+            let text =document.querySelector(".javascript")
+            text.style.display = "none"
+            let element = document.querySelector(".mylife")
+            element.style.display = "none"
+        }
+            // TODO: Add code to check answers to questions
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the approximate ratio of people to sheep in New Zealand</h3h>
+                <br>
+                <button class = "reset" id = "did" onclick = "reset(); incorrect('#did')"> 6 people per 1 sheep</button>
+                <button class = "reset"  id = "mas" onclick = "reset();incorrect('#mas')"> 3 people per 1 sheep</button>
+                <button class = "reset"  id = "pari" onclick = "reset();incorrect('#pari')">1 person per 1 sheep</button>
+                <button class = "reset"  id = "gabe" onclick = "reset();incorrect('#gabe')">1 person per 3 sheep</button>
+                <button class = "reset"  id = "correct" onclick = "reset();c()">1 person per 6 sheep</button>
+                <p class = "javascript">correct</p> 
+                <p class = "mylife">incorrect</p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>In which county is it illegal to own only on guinea pig, as a lone guinea pig might get lonely</h3>
+                    <input id = "mywrong" type="text">
+                <button onclick = "checkAnswer()"> Check Answer </button>
+                <p class = "cony">correct</p>
+                <p class = "incorrect">incorrect</p>
+            </div>
+
+        </div>
+    </body>
+</html>
